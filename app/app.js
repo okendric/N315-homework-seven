@@ -66,7 +66,7 @@ var LISTS = [
         checked: false,
       },
       {
-        name: "xbox Series X",
+        name: "xbox series x",
         checked: false,
       },
       {
@@ -74,15 +74,15 @@ var LISTS = [
         checked: false,
       },
       {
-        name: "nintendo Switch",
+        name: "nintendo switch",
         checked: false,
       },
       {
-        name: "iPhone 14 Pro",
+        name: "iphone 14 pro",
         checked: false,
       },
       {
-        name: "samsung Galaxy S22",
+        name: "samsung galaxy S22",
         checked: false,
       },
       {
@@ -90,7 +90,7 @@ var LISTS = [
         checked: false,
       },
       {
-        name: "desktop Computer",
+        name: "desktop computer",
         checked: false,
       },
       {
@@ -467,6 +467,16 @@ function itemChecked(element, listIndex, itemIndex) {
   LISTS[listIndex].listItems[itemIndex].checked = checkedValue;
 }
 
+function addCategory() {
+  let newCategoryName = $("#addCategory").val();
+  let newCategoryObj = {
+    name: newCategoryName,
+  };
+  LISTS.push(newCategoryObj);
+  // Trouble getting main list to update correctly
+  console.log(LISTS.length);
+}
+
 function addItem(listIndex) {
   let newItemName = $("#addItem").val();
   let newItemObj = {
@@ -497,23 +507,19 @@ function loadListItems(listIndex) {
     }</span>
     <span class="delete" onclick="deleteItem(${listIndex}, ${idx})">Delete</span></li>`;
   });
-  listString += `</ul><div class="addItemInput"><input id="addItem" type="text"><button onclick="addItem(${listIndex})">Add Item</button></div>`;
+  listString += `</ul><div class="addItemInput"><input id="addItem" type="text"><button id="addButton" onclick="addItem(${listIndex})">Add Item</button></div>`;
 
   $("#app").html(listString);
 }
 
 function loadLists() {
-  let listString = "<ul>";
+  let listString = `<ul>`;
   $.each(LISTS, function (idx, list) {
     listString += `<li id="${idx}" onclick="loadListItems(${idx})">${list.name} <span class="right">Items: ${list.listItems.length}</span></li>`;
   });
-  listString += "</ul>";
+  listString += `</ul>`;
 
   $("#app").html(listString);
 }
 
-function initListeners() {}
-
-$(document).ready(function () {
-  initListeners();
-});
+$(document).ready(function () {});

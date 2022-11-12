@@ -3,7 +3,7 @@
 }
 
 html {
-  background-color: rgb(130, 180, 117);
+  background-color: rgb(7, 30, 73);
 }
 
 #app {
@@ -16,15 +16,22 @@ li {
   cursor: pointer;
   list-style-type: none;
   height: 50px;
-  width: 1500px;
+  width: 70vw;
   display: flex;
   align-items: center;
   padding-left: 20px;
-  background-color: beige;
+  background-color: rgb(54, 134, 172);
   position: relative;
+  font-family: "Permanent Marker", cursive;
+}
+li:hover {
+  background-color: rgb(34, 87, 112);
 }
 li:nth-child(odd) {
-  background-color: rgb(231, 195, 147);
+  background-color: rgb(93, 192, 223);
+}
+li:nth-child(odd):hover {
+  background-color: rgb(24, 85, 104);
 }
 li input {
   margin: 0 20px;
@@ -32,6 +39,7 @@ li input {
 
 .strike {
   text-decoration: line-through;
+  text-decoration-thickness: 3px;
 }
 
 .right {
@@ -43,6 +51,44 @@ li input {
   cursor: pointer;
   position: absolute;
   right: 20px;
+  background-color: rgb(147, 147, 236);
+  border-radius: 10px;
+}
+.delete:hover {
+  background-color: rgb(89, 89, 146);
+  color: white;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  flex-direction: column;
+}
+body button {
+  height: 50px;
+  cursor: pointer;
+  width: 150px;
+  font-size: 27px;
+  color: rgb(36, 165, 197);
+  -webkit-text-stroke: black 1px;
+  font-family: "Permanent Marker", cursive;
+  margin-bottom: 50px;
+}
+body button:hover {
+  background-color: rgb(123, 126, 129);
+  color: rgb(26, 119, 143);
+}
+body #addItem {
+  padding-top: 7px;
+  height: 40px;
+  margin-right: 20px;
+  font-size: 20px;
+  font-family: "Permanent Marker", cursive;
+}
+body #addButton {
+  margin-top: 60px;
 }
 
 /*# sourceMappingURL=styles.css.map */
