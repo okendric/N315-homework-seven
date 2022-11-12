@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+}
+
+html {
+  background-color: rgb(130, 180, 117);
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+li {
+  cursor: pointer;
+  list-style-type: none;
+  height: 50px;
+  width: 1500px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  background-color: beige;
+  position: relative;
+}
+li:nth-child(odd) {
+  background-color: rgb(231, 195, 147);
+}
+li input {
+  margin: 0 20px;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.right {
+  position: absolute;
+  right: 20px;
+}
+
+.delete {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
+/*# sourceMappingURL=styles.css.map */
