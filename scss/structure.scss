@@ -18,6 +18,8 @@ li {
     height: 50px;
     width: 70vw;
     display: flex;
+    z-index: 1;
+    margin-right: 6vw;
     align-items: center;
     padding-left: 20px;
     background-color: rgb(54, 134, 172);
@@ -46,9 +48,10 @@ li {
     text-decoration-thickness: 3px;
 }
 
+
 .right {
     position: absolute;
-    right: 20px;
+    right: 100px;
 }
 
 .delete {
@@ -57,6 +60,7 @@ li {
     right: 20px;
     background-color: rgb(147, 147, 236);
     border-radius: 10px;
+    z-index: 5;
 
     &:hover {
         background-color: rgb(89, 89, 146);
@@ -70,6 +74,7 @@ body {
     justify-content: center;
     padding-top: 30px;
     flex-direction: column;
+
 
     button {
         height: 50px;
@@ -99,6 +104,12 @@ body {
         margin-top: 60px;
     }
 
+    .addMainItem {
+        padding-top: 7px;
+        height: 40px;
+        font-size: 20px;
+        font-family: 'Permanent Marker', cursive;
+    }
 
 }
 

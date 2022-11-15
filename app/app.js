@@ -467,16 +467,6 @@ function itemChecked(element, listIndex, itemIndex) {
   LISTS[listIndex].listItems[itemIndex].checked = checkedValue;
 }
 
-function addCategory() {
-  let newCategoryName = $("#addCategory").val();
-  let newCategoryObj = {
-    name: newCategoryName,
-  };
-  LISTS.push(newCategoryObj);
-  // Trouble getting main list to update correctly
-  console.log(LISTS.length);
-}
-
 function addItem(listIndex) {
   let newItemName = $("#addItem").val();
   let newItemObj = {
@@ -488,9 +478,23 @@ function addItem(listIndex) {
   loadListItems(listIndex);
 }
 
+function addMainItem(mainIndex) {
+  let newItemName = $("#addMainItem").val();
+  let newItemObj = {
+    name: newItemName,
+  };
+  LISTS.push(newItemObj);
+  loadLists();
+}
+
 function deleteItem(listIndex, idx) {
   LISTS[listIndex].listItems.splice(idx, 1);
   loadListItems(listIndex);
+}
+
+function deleteMainItem(idx) {
+  LISTS.splice(idx, 1);
+  loadLists();
 }
 
 function loadListItems(listIndex) {
@@ -515,9 +519,11 @@ function loadListItems(listIndex) {
 function loadLists() {
   let listString = `<ul>`;
   $.each(LISTS, function (idx, list) {
-    listString += `<li id="${idx}" onclick="loadListItems(${idx})">${list.name} <span class="right">Items: ${list.listItems.length}</span></li>`;
+    listString += `<li id="${idx}" onclick="loadListItems(${idx})">${list.name} <span class="right">Items: ${list.listItems.length}</span>
+    <span class="delete" onclick="deleteMainItem(${LISTS}, ${idx})">Delete</span>
+    </li>`;
   });
-  listString += `</ul>`;
+  listString += `</ul><div class="addMainItem"><input id="addItem" type="text"><button id="addButton" onclick="addMainItem(${LISTS})">Add Item</button></div>`;
 
   $("#app").html(listString);
 }
